@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://www.example.com/your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .form-group input, .form-group textarea {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .required {
+            color: red;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container mt-5">
+            <h1 class="text-center">Leave Application Form</h1>
+            <form action="https://script.google.com/macros/s/AKfycbxi0urY1VrhrBqtBeWn3oqkhPXEgg5L0I9FfGydrM6YAXFGRl91BwECMJaY_-SU4zkg/exec" method="post" class="mt-4">
+                <div class="form-group">
+                    <label for="employeeName">Employee Name <span class="required">*</span></label>
+                    <input type="text" class="form-control" id="employeeName" name="employeeName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department <span class="required">*</span></label>
+                    <input type="text" class="form-control" id="department" name="department" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fromDate">From Date <span class="required">*</span></label>
+                    <input type="date" class="form-control" id="fromDate" name="fromDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="toDate">To Date <span class="required">*</span></label>
+                    <input type="date" class="form-control" id="toDate" name="toDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reasons for taking Leave <span class="required">*</span></label>
+                    <textarea class="form-control" id="reason" name="reason" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsappNumber">WhatsApp Number (with country code +91) <span class="required">*</span></label>
+                    <input type="tel" class="form-control" id="whatsappNumber" name="whatsappNumber" placeholder="+91 9876543210" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Set the minimum date for the "From Date" input
+        const today = new Date();
+        today.setDate(today.getDate() + 2); // Add 2 days to today's date
+        const minDate = today.toISOString().split('T')[0]; // Format to YYYY-MM-DD
+        document.getElementById('fromDate').setAttribute('min', minDate);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
